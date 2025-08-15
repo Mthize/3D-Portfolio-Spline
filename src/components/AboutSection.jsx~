@@ -9,7 +9,7 @@ const AboutSection = () => {
   const starRef = useRef([]);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);  
 
     gsap.fromTo(
       titleRef.current,
@@ -42,39 +42,20 @@ const AboutSection = () => {
       },
     );
 
-    // Stars Animatin with different speeds and directions
+    // Stars Animatin with different speeds and directions 
     starRef.current.forEach((star, index) => {
-      const direction = index % 2 === 0 ? 1 : -1;
-      const speed = 0.5 + Math.random() * 0.5;
+      const direction = index % 2 === 0 ? 1 : -1
+      const speed = 0.5 + Math.random() * 0.5
 
       gsap.to(star, {
         x: `${direction * (100 + index * 20)}`,
         y: `${direction * (-50 - index * 20)}`,
-        rotation: direction * 360,
-        ease: "none",
-        srcollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: speed,
-        },
-      });
-    });
+        rotation: di
+      })
+    })
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === sectionRef.current) {
-          trigger.kill();
-        }
-      });
-    };
+
   }, []);
-
-  const addToStars = (el) => {
-    if (el && !starRef.current.includes(el)) {
-      starRef.current.push(el);
-    }
-  };
 
   return (
     <section
@@ -86,7 +67,6 @@ const AboutSection = () => {
         {/*  stars section */}
         {[...Array(30)].map((_, i) => (
           <div
-            ref={addToStars}
             key={`star-${i}`}
             className="absolute rounded-full bg-white"
             style={{

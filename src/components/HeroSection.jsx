@@ -23,7 +23,8 @@ const HeroSection = () => {
           }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold z-10 mb-6"
         >
-          Crafting Secure & <br /> Seamless Digital <br /> Experiences
+          Architecting Digital <br /> Fortresses with <br /> Frictionless
+          Passage
         </motion.h1>
 
         <motion.p
@@ -38,9 +39,9 @@ const HeroSection = () => {
           }}
           className="text-xl md:text-lg lg:text-2xl text-purple-200 max-w-2xl"
         >
-          Cybersecurity professional and full-stack web developer crafting
-          secure, future-proof digital experiences. I blend creative design with
-          robust protection to help brands thrive safely in the digital era.
+          ybersecurity Sentinel & Full-Stack Architect Building digital
+          fortresses where stunning design meets military-grade protection
+          Empowering brands to thrive fearlessly in the digital frontier"
         </motion.p>
       </div>
 
