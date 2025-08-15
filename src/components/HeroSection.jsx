@@ -39,7 +39,7 @@ const HeroSection = () => {
           }}
           className="text-xl md:text-lg lg:text-2xl text-purple-200 max-w-2xl"
         >
-          ybersecurity Sentinel & Full-Stack Architect Building digital
+          Cybersecurity Sentinel & Full-Stack Architect Building digital
           fortresses where stunning design meets military-grade protection
           Empowering brands to thrive fearlessly in the digital frontier"
         </motion.p>
