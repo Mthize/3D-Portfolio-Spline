@@ -7,6 +7,8 @@ import HeroSection from "./components/HeroSection.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
 import AboutSection from "./components/AboutSection.jsx";
 import ProjectSection from "./components/ProjectSection.jsx";
+import ContactSection from "./components/ContactSection.jsx";
+
 
 export default function App() {
   useEffect(() => {
@@ -29,6 +31,7 @@ export default function App() {
       <CustomCursor />
       <AboutSection />
       <ProjectSection />
+      <ContactSection /> 
     </>
   );
 }
