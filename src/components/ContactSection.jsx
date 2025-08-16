@@ -74,7 +74,7 @@ const ContactSection = () => {
       {
         scale: 17,
         backgroundColor: "#E8D5FF",
-        boxShadow: "0 0 50px 20px rgba(233, 213, 255, 0.3)", // Fixed value
+        boxShadow: "0 0 50px 20px rgba(233, 213, 255, 0.3)",
         ease: "power2.inOut",
         duration: 0.5,
       },
