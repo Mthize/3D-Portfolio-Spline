@@ -8,7 +8,8 @@ import CustomCursor from "./components/CustomCursor.jsx";
 import AboutSection from "./components/AboutSection.jsx";
 import ProjectSection from "./components/ProjectSection.jsx";
 import ContactSection from "./components/ContactSection.jsx";
-
+import Footer from "./components/Footer.jsx";
+import ProgressBar from "./components/ProgressBar.jsx";
 
 export default function App() {
   useEffect(() => {
@@ -31,7 +32,9 @@ export default function App() {
       <CustomCursor />
       <AboutSection />
       <ProjectSection />
-      <ContactSection /> 
+      <ContactSection />
+      <Footer />
+      <ProgressBar />
     </>
   );
 }
