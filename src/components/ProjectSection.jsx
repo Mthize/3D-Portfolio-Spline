@@ -100,12 +100,11 @@ const ProjectSection = () => {
       },
     );
 
-
     // Parallax effect for the entire section
     gsap.fromTo(
       sectionRef.current,
       {
-        backgroundPosition: "50% 0%",    
+        backgroundPosition: "50% 0%",
       },
       {
         backgroundPosition: "50% 100%",
@@ -114,37 +113,67 @@ const ProjectSection = () => {
           trigger: sectionRef.current,
           start: "top bottom",
           end: "bottom top",
-          scrub: true,     
-        }
-      }
-    )
+          scrub: true,
+        },
+      },
+    );
 
-
-    // Horizontal Scrolling 
+    // Horizontal Scrolling
     // Create the horizontal Scrolling animation
-    const horizontalScroll = gsap.to("panel", {
+    const horizontalScroll = gsap.to(".panel", {
       xPercent: -100 * (projectImages.length - 1),
       ease: "none",
-      srcollTrigger: {
+      scrollTrigger: {
         trigger: sectionRef.current,
         start: "top top",
-        end: () => `+=${horizontalRef.currentoffsetWidth}`,
+        end: () => `+=${horizontalRef.current.offsetWidth}`,
         pin: true,
         scrub: 1,
         snap: {
           snapTo: 1 / (projectImages.length - 1),
-          duration: { main: 0.2, max: 0.3 },
-          delay: 0.1,    
+          duration: { min: 0.2, max: 0.3 },
+          delay: 0.1,
         },
         invalidateOnRefresh: true,
+      },
+    });
+
+    // Image Animation
+    // Animation each image panel
+    const panels = gsap.utils.toArray(".panel");
+    panels.forEach((panel) => {
+      const image = panel.querySelector(".project-image");
+      const title = panel.querySelector(".project-title");
+
+      // Create a timeline for each panel
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: panel,
+          containerAnimation: horizontalScroll,
+          start: "left right",
+          end: "right left",
+          scrub: true,
+        },
+      });
+
+      // Image scale and opacity animation
+      tl.fromTo(
+        image,
+        { scale: 0, rotate: -20 },
+        { scale: 1, rotate: 0, duration: 0.5 }, // Changed rotate to 0
+      );
+
+      // Title animation if it exists
+      if (title) {
+        tl.fromTo(title, { y: 30 }, { y: -100, duration: 0.3 }, 0.2);
       }
-    })
-  }, []);
+    });
+  }, [projectImages.length]);
 
   return (
     <section
       ref={sectionRef}
-      id="horizantol-section"
+      id="horizontal-section"
       className="relative py-20 bg-[#FBFCFB] overflow-hidden"
     >
       {/* Section Title */}
